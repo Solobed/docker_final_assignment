@@ -1,0 +1,79 @@
+version: 2
+
+sources:
+  - name: deezer
+    description: "Raw data from Deezer API"
+    schema: public
+    tables:
+      - name: top_tracks
+        description: "Table containing top tracks data."
+        columns:
+          - name: track_id
+            description: "Unique identifier for the track"
+
+          - name: title
+            description: "Title of the track"
+
+          - name: artist_id
+            description: "Unique identifier for the artist"
+
+          - name: artist_name
+            description: "Name of the artist"
+
+          - name: position
+            description: "Track's chart position for the day"
+
+          - name: duration_sec
+            description: "Duration of the track in seconds"
+
+          - name: date
+            description: "Date the track was fetched"
+
+models:
+  - name: track_performance
+    description: "Summary of performance for individual tracks in the Deezer top charts.Measures how long a track stayed in the charts and its best position etc..."
+    columns:
+      - name: track_id
+        description: Unique identifier for the track.
+
+      - name: title
+        description: Title of the track.
+
+      - name: artist_name
+        description: Name of the artist performing the track.
+
+      - name: days_in_chart
+        description: Number of distinct days the track appeared in the top charts. 
+
+      - name: best_position
+        description: Best chart position achieved by the track.
+
+  - name: artist_performance
+    description: "Summary of artist performance based on tracks in the Deezer top charts.Includes metrics such as number of tracks, best position etc..."
+    columns:
+      - name: artist_id
+        description: Unique identifier for the artist.
+
+      - name: artist_name
+        description: Name of the artist.
+
+      - name: total_tracks
+        description: Total number of distinct tracks by the artist in the chart.
+
+      - name: best_position
+        description: Best chart position achieved by any track of the artist.
+
+      - name: active_days
+        description: Number of distinct days the artist had tracks in the chart.
+
+  - name: track_duration
+    description: "Analysis of track durations in the Deezer top charts."
+    columns:
+      - name: date
+        description: Date of the chart.
+
+      - name: avg_duration_min
+        description: Average duration of tracks on this date, in minutes.
+
+      - name: track_count
+        description: Number of tracks.

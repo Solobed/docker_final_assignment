@@ -1,0 +1,17 @@
+database_name: trackdb
+sqlalchemy_uri: "postgresql+psycopg2://user:password@postgres:5432/trackdb"
+cache_timeout: null
+expose_in_sqllab: true
+allow_run_async: false
+allow_ctas: false
+allow_cvas: false
+allow_dml: false
+allow_file_upload: false
+extra:
+  metadata_params: {}
+  engine_params: {}
+  metadata_cache_timeout: {}
+  schemas_allowed_for_file_upload: []
+impersonate_user: false
+uuid: 827a0890-ed76-4d44-9fc7-73c44c849a16
+version: 1.0.0
