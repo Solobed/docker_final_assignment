@@ -36,7 +36,6 @@ services:
   superset:
     build: ./superset_init
     container_name: superset
-    user: root
     environment:
       SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY}
       POSTGRES_USER: ${POSTGRES_USER}
@@ -52,10 +51,6 @@ services:
       - python_app
     networks:
       - pipeline_net
-
-volumes:
-  postgres_data:
-  superset_home:
 
 networks:
   pipeline_net:
