@@ -3,8 +3,8 @@
     It uses Docker, Python, dbt, and Apache Superset to collect, transform, and display insights from music data.
 ---
 
-## 🧩 Architecture du projet
-
+## Project Architecture
+![Diagram of the pipeline](./Pipeline.png)
 ```
 master
 |
@@ -77,7 +77,7 @@ Or
 docker compose up -f compose.yml up
 ```
 
-### Access the dashboards
+## Access the dashboards
 
 Open your browser and go to: http://localhost:8088
 
@@ -87,7 +87,7 @@ Log in with the default credentials:
     Password: admin
     
 
-### Useful Links
+## Useful Links
 
 - Related article for further information: [Deezer Data Pipeline: End-to-End ETL with Python, dbt, and Docker](https://medium.com/@juitdtio/deezer-data-pipeline-end-to-end-etl-with-python-dbt-and-docker-41a3de4f02fd)
 
